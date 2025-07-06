@@ -2,6 +2,7 @@
   "name": "woodmill-winery",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://ttovey.github.io/woodmillWebsite",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
