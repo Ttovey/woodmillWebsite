@@ -1,0 +1,783 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.App {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar {
+  background: transparent;
+  backdrop-filter: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.navbar-scrolled {
+  background: rgba(114, 47, 55, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-scrolled.inverted {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-logo {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.9);
+  transition: all 0.3s ease;
+}
+
+.navbar-scrolled .nav-logo {
+  color: white;
+  text-shadow: none;
+}
+
+.navbar-scrolled.inverted .nav-logo {
+  color: #722f37;
+  text-shadow: none;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.navbar-scrolled .nav-menu a {
+  color: white;
+  text-shadow: none;
+}
+
+.navbar-scrolled.inverted .nav-menu a {
+  color: #333;
+  text-shadow: none;
+}
+
+.nav-menu a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-scrolled .nav-menu a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-scrolled.inverted .nav-menu a:hover {
+  color: #722f37;
+}
+
+.nav-menu a:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(1);
+  transition: transform 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  color: white;
+  max-width: 600px;
+  padding: 0 4rem 8rem 4rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  letter-spacing: -2px;
+  text-shadow: 
+    3px 3px 6px rgba(0, 0, 0, 0.8),
+    1px 1px 3px rgba(0, 0, 0, 0.9),
+    0 0 15px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.9),
+    0 0 10px rgba(0, 0, 0, 0.4);
+  line-height: 1.6;
+}
+
+.cta-button {
+  background: #722f37;
+  color: white;
+  padding: 18px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 6px 20px rgba(114, 47, 55, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:hover {
+  background: #8b3a42;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(114, 47, 55, 0.6);
+}
+
+/* About Section */
+.about {
+  padding: 100px 0;
+  background: white;
+  transition: background-color 0.5s ease;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #722f37;
+  margin-bottom: 3rem;
+  font-weight: bold;
+  transition: color 0.5s ease;
+}
+
+.about.story-inverted {
+  background: #722f37;
+}
+
+.about.story-inverted h2 {
+  color: white;
+}
+
+.story-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.story-row {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.story-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.story-card {
+  flex: 1;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #722f37;
+  transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.story-row:nth-child(even) .story-card {
+  border-left: none;
+  border-right: 4px solid #722f37;
+  transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.story-card h3 {
+  color: #722f37;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  transition: color 0.5s ease;
+}
+
+.story-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+  transition: color 0.5s ease;
+}
+
+.about.story-inverted .story-card {
+  background: #722f37;
+  border-left: 4px solid white;
+}
+
+.about.story-inverted .story-row:nth-child(even) .story-card {
+  border-left: none;
+  border-right: 4px solid white;
+}
+
+.about.story-inverted .story-card h3 {
+  color: white;
+}
+
+.about.story-inverted .story-card p {
+  color: white;
+}
+
+.story-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-placeholder {
+  font-size: 8rem;
+  text-align: center;
+  opacity: 0.8;
+  background: linear-gradient(135deg, #f5f1eb 0%, #e8ddd4 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.smaller-image {
+  min-height: 300px !important;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.story-cta {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+.story-wine-button {
+  display: inline-block;
+  background: white;
+  color: #722f37;
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border: 2px solid #722f37;
+}
+
+.story-wine-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: #722f37;
+  color: white;
+}
+
+.about.story-inverted .story-wine-button {
+  background: #722f37;
+  color: white;
+  border: 2px solid white;
+}
+
+.about.story-inverted .story-wine-button:hover {
+  background: white;
+  color: #722f37;
+}
+
+/* Visit Section */
+.visit {
+  padding: 100px 0;
+  background: white;
+}
+
+.visit h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #722f37;
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+
+.visit-content {
+  width: 100%;
+}
+
+.visit-info h3 {
+  color: #722f37;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.visit-info p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.visit-location {
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: -3rem;
+}
+
+.visit-location p {
+  color: #666;
+  font-size: 1.1rem;
+  font-style: italic;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+.hours-container {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.hours {
+  background: #f8f5f0;
+  padding: 2.5rem;
+  border-radius: 15px;
+  width: calc(50% - 1rem);
+  flex: 0 0 calc(50% - 1rem);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e0ddd6;
+}
+
+.hours h4 {
+  color: #722f37;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.hours-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.day-hours {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  border: 1px solid rgba(114, 47, 55, 0.1);
+  transition: all 0.2s ease;
+}
+
+.day-hours:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.day-hours.closed {
+  background: rgba(114, 47, 55, 0.1);
+  border: 1px solid rgba(114, 47, 55, 0.2);
+}
+
+.day-hours.closed:hover {
+  background: rgba(114, 47, 55, 0.15);
+}
+
+.day {
+  font-weight: 600;
+  color: #722f37;
+  font-size: 0.95rem;
+}
+
+.time {
+  font-weight: 500;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.day-hours.closed .time {
+  color: #722f37;
+  font-weight: 600;
+}
+
+.hours-note {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(114, 47, 55, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(114, 47, 55, 0.1);
+  margin-top: 1rem;
+}
+
+.hours-note p {
+  margin: 0;
+  color: #722f37;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.farmers-market {
+  background: #f8f5f0;
+  padding: 2.5rem;
+  border-radius: 15px;
+  width: calc(50% - 1rem);
+  flex: 0 0 calc(50% - 1rem);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e0ddd6;
+}
+
+.farmers-market h4 {
+  color: #722f37;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.market-container {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.market-location {
+  flex: 1;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  border: 1px solid #e0ddd6;
+}
+
+.market-location h5 {
+  color: #722f37;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.market-address {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.market-address p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.market-address p em {
+  color: #722f37;
+  font-weight: 500;
+}
+
+.market-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.reserve-button {
+  background: #722f37;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reserve-button:hover {
+  background: #8b3a42;
+  transform: translateY(-2px);
+}
+
+.tasting-room-placeholder {
+  font-size: 8rem;
+  text-align: center;
+  opacity: 0.8;
+  background: linear-gradient(135deg, #f5f1eb 0%, #e8ddd4 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Footer */
+.footer {
+  background: #722f37;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer p {
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.social-link:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-menu {
+    gap: 1rem;
+  }
+  
+  .hero {
+    background-attachment: scroll;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+    padding: 0 2rem;
+    max-width: 90%;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+    white-space: normal;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+  
+  .story-grid {
+    gap: 2rem;
+  }
+  
+  .story-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .story-card {
+    padding: 1.5rem;
+  }
+  
+    .image-placeholder {
+    font-size: 4rem;
+    min-height: 200px;
+    padding: 1rem;
+  }
+  
+  .wine-purchase {
+    padding: 60px 0;
+  }
+  
+  .wine-purchase-content h2 {
+    font-size: 2.2rem;
+  }
+  
+  .wine-purchase-content p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+  
+  .wine-purchase-button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+  }
+
+  .visit-location p {
+    font-size: 1rem;
+  }
+  
+  .hours-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .hours,
+  .farmers-market {
+    padding: 1.5rem;
+    width: 100%;
+    flex: 1 1 100%;
+  }
+  
+  .day-hours {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .day,
+  .time {
+    font-size: 0.85rem;
+  }
+  
+  .hours-note {
+    padding: 0.8rem;
+  }
+  
+  .hours-note p {
+    font-size: 0.8rem;
+  }
+  
+  .market-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .market-location {
+    padding: 0.75rem;
+  }
+  
+  .market-address p {
+    font-size: 0.8rem;
+  }
+  
+  .market-hours .day-hours {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .market-hours .day,
+  .market-hours .time {
+    font-size: 0.85rem;
+  }
+  
+  .vineyard-placeholder,
+  .tasting-room-placeholder {
+    font-size: 4rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  section {
+    padding: 60px 0 !important;
+  }
+  
+  h2 {
+    font-size: 2rem !important;
+  }
+}
