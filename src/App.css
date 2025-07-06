@@ -680,11 +680,33 @@ body {
     gap: 1.5rem;
   }
   
+  /* Override alternating layout on mobile - all text comes first, then image */
+  .story-row:nth-child(even) {
+    flex-direction: column;
+  }
+  
+  /* Ensure all story cards have consistent styling on mobile */
+  .story-row:nth-child(even) .story-card {
+    order: 1;
+  }
+  
+  .story-row:nth-child(even) .story-image {
+    order: 2;
+  }
+  
+  .story-row .story-card {
+    order: 1;
+  }
+  
+  .story-row .story-image {
+    order: 2;
+  }
+  
   .story-card {
     padding: 1.5rem;
   }
   
-    .image-placeholder {
+  .image-placeholder {
     font-size: 4rem;
     min-height: 200px;
     padding: 1rem;
